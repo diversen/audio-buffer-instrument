@@ -1,0 +1,21 @@
+<script src="dist/tiny-sample-loader.js"></script>
+<script src="dist/audio-buffer-instrument.js"></script>
+<script>
+var ctx = new AudioContext();
+
+var remoteUrl = 'https://oramics.github.io/sampled/DM/TR-909/SP/samples/hihat-open-2.wav';
+tinySampleLoader(remoteUrl, ctx, (buffer) => {
+    var buffer = new audioBufferInstrument(ctx, buffer);
+    
+    // Trigger right away
+    buffer.trigger(0);
+    
+    // Or get the instrument. Then it acts like a node
+    var ins = buffer.get();
+    
+    ins.connect(ctx.destination);
+    ins.start(2);
+    
+ });
+
+</script>

@@ -1,6 +1,6 @@
 {
   "name": "audio-buffer-instrument",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple webaudio module that creates instruments from audio-buffers",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/diversen/audio-buffer-instrument/issues"
   },
-  "homepage": "https://github.com/diversen/audio-buffer-instrument#readme"
+  "homepage": "https://github.com/diversen/audio-buffer-instrument#readme",
+  "dependencies": {
+    "tiny-sample-loader": "^2.0.0"
+  }
 }

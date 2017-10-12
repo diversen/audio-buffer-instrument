@@ -4,7 +4,7 @@ A tiny module for getting 'audioBuffer' nodes.
 
 npm install --save audio-buffer-instrument
 
-Code mostly taken from this great article:
+Code mostly taken from this nice article:
 
 https://dev.opera.com/articles/drum-sounds-webaudio/
 
@@ -17,4 +17,3 @@ See [index.js](index.js)
 See [index.html](index.html)
 
 MIT © [Dennis Iversen](https://github.com/diversen)
-

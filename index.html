@@ -1,3 +1,4 @@
+<!-- run npm update to test with this example -->
 <script src="node_modules/tiny-sample-loader/dist/tiny-sample-loader.js"></script>
 <script src="dist/audio-buffer-instrument.js"></script>
 <script>
@@ -6,15 +7,19 @@ var ctx = new AudioContext();
 var remoteUrl = 'https://oramics.github.io/sampled/DM/TR-909/SP/samples/hihat-open-2.wav';
 var hihatPromise = tinySampleLoader(remoteUrl, ctx);
 hihatPromise.then(function (value) {
-    var buffer = new audioBufferInstrument(ctx, value);
-    // Trigger right away
-    buffer.trigger(0);
+    var instrument = new audioBufferInstrument(ctx, value);
     
-    // Or get the instrument. Then it acts like a node
-    var ins = buffer.get();
-    
-    ins.connect(ctx.destination);
-    ins.start(2);
+    // Trigger
+    instrument.trigger(1);
+
+    var audioBuf = instrument.get();
+    audioBuf.connect(ctx.destination);
+    audioBuf.start(2);
+
+    // In this way you don't need to reload the buffer source
+    var audioBuf = instrument.get();
+    audioBuf.connect(ctx.destination);
+    audioBuf.start(3);
 }).catch(function (value) {
     console.log(value); // error message
 })

@@ -1,6 +1,6 @@
 {
   "name": "audio-buffer-instrument",
-  "version": "1.0.1",
+  "version": "3.0.0",
   "description": "Simple webaudio module that creates instruments from audio-buffers",
   "main": "index.js",
   "scripts": {
